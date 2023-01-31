@@ -1,0 +1,54 @@
+/* No CSS *//*# sourceMappingURL=home.component.css.map */
+
+.card{
+margin: 10px;
+}
+
+.hometitles h2{
+text-align: center;
+padding: 20px;
+
+}
+
+.hometitles h3{
+  text-align: center;
+  padding-bottom: 20px;
+  font-weight: 200;
+  }
+
+  @media only screen and (max-width: 300px) {
+    .hometitles h2{
+      font-size: 130%;
+      }
+
+      .hometitles h3{
+        font-size: 120%;
+        }
+
+  }
+
+.jumbotron {
+    background-image:linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("https://cdn.svgator.com/images/2022/06/use-svg-as-background-image-particle-strokes.svg");
+    background-size: cover;
+
+}
+.display-4{
+color: aliceblue;
+font-weight: bold;
+font-family:sans-serif;
+}
+
+.lead{
+  color: aliceblue;
+  font-family:sans-serif;
+line-height: 3;
+  }
+
+.sub{
+    color: aliceblue;
+    font-family:sans-serif;
+    }
+
+.jumtext{
+padding-top: 10em;
+}

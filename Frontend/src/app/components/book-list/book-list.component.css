@@ -1,0 +1,13 @@
+
+.list {
+
+display: flex;
+text-align: left;
+  max-width: 750px;
+  margin: auto;
+padding: 10px;
+justify-content: left;
+}
+
+
+
