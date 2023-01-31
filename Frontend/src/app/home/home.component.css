@@ -1,5 +1,11 @@
 /* No CSS *//*# sourceMappingURL=home.component.css.map */
+p{
+color:grey;
+}
 
+h5{
+color: rgb(87, 87, 87);
+}
 .card{
 margin: 10px;
 }
@@ -7,9 +13,7 @@ margin: 10px;
 .hometitles h2{
 text-align: center;
 padding: 20px;
-
 }
-
 
 
   @media only screen and (max-width: 600px) {
@@ -35,7 +39,7 @@ font-family:sans-serif;
 .lead{
   color: aliceblue;
   font-family:sans-serif;
-line-height: 3;
+line-height: 2;
   }
 
 .sub{

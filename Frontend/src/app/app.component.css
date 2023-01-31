@@ -1,3 +1,4 @@
+
 footer {
   position:relative;
 
@@ -11,7 +12,7 @@ footer {
 
   height: auto;
 
-  width: 100vw;
+  width: 99.1vw;
 
   padding-top: 40px;
 
@@ -91,7 +92,7 @@ footer {
 .footer-bottom {
   background: #000;
 
-  width: 100vw;
+  width: 99.1vw;
 
   padding: 20px;
 
