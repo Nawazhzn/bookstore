@@ -30,13 +30,17 @@
 
       <button (click)="saveBook()" class="btn btn-success">Submit</button>
     </div>
+    <app-image-upload></app-image-upload>
 
     <div *ngIf="submitted">
       <h4>New Book was added successfully!</h4>
       <button class="btn btn-success" (click)="newBook()">Add</button>
     </div>
   </div>
+
 </div>
+
+
 
 <div style="height: 100px;">
   <p>j</p>

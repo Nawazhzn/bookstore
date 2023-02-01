@@ -18,6 +18,7 @@ import { AddBooksComponent } from './components/add-books/add-books.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookhomeComponent } from './components/bookhome/bookhome.component';
+import { ImageUploadComponent } from './file-upload/upload-image.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BookhomeComponent } from './components/bookhome/bookhome.component';
     BookDetailsComponent,
     BookListComponent,
     BookhomeComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,
