@@ -1,6 +1,6 @@
-const { Books } = require("../models");
+// const { Books } = require("../models");
 const db = require("../models");
-const books = db.Books;
+const Book = db.books;
 
 
 exports.create = (req, res) => {
@@ -11,7 +11,7 @@ exports.create = (req, res) => {
     }
   
     // Create a Book
-    const books = new Books({
+    const book = new Book({
       title: req.body.title,
       description: req.body.description,
       author: req.body.author,
@@ -20,8 +20,8 @@ exports.create = (req, res) => {
     });
   
     // Save Book in the database
-    books
-      .save(books)
+    book
+      .save(book)
       .then(data => {
         res.send(data);
       })
@@ -37,7 +37,7 @@ exports.create = (req, res) => {
     const title = req.query.title;
     var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
   
-    Books.find(condition)
+    Book.find(condition)
       .then(data => {
         res.send(data);
       })
@@ -49,6 +49,23 @@ exports.create = (req, res) => {
       });
   };
 
+  exports.findOne = (req, res) => {
+    const id = req.params.id;
+  
+    Book.findById(id)
+      .then(data => {
+        if (!data)
+          res.status(404).send({ message: "Not found Book with id " + id });
+        else res.send(data);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .send({ message: "Error retrieving Book with id=" + id });
+      });
+  };
+  
+
   exports.update = (req, res) => {
     if (!req.body) {
       return res.status(400).send({
@@ -58,7 +75,7 @@ exports.create = (req, res) => {
   
     const id = req.params.id;
   
-    Books.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    Book.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
       .then(data => {
         if (!data) {
           res.status(404).send({
@@ -78,7 +95,7 @@ exports.create = (req, res) => {
   exports.delete = (req, res) => {
     const id = req.params.id;
   
-    Books.findByIdAndRemove(id)
+    Book.findByIdAndRemove(id)
       .then(data => {
         if (!data) {
           res.status(404).send({
@@ -100,7 +117,7 @@ exports.create = (req, res) => {
   //Delete All Objects
 
   exports.deleteAll = (req, res) => {
-    Books.deleteMany({})
+    Book.deleteMany({})
       .then(data => {
         res.send({
           message: `${data.deletedCount} Books were deleted successfully!`
@@ -117,7 +134,7 @@ exports.create = (req, res) => {
   //Find all objects
 
   exports.findAllPublished = (req, res) => {
-    Books.find({ published: true })
+    Book.find({ published: true })
       .then(data => {
         res.send(data);
       })

@@ -17,6 +17,7 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { AddBooksComponent } from './components/add-books/add-books.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { BookListComponent } from './components/book-list/book-list.component';
+import { BookhomeComponent } from './components/bookhome/bookhome.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { BookListComponent } from './components/book-list/book-list.component';
     AddBooksComponent,
     BookDetailsComponent,
     BookListComponent,
+    BookhomeComponent,
   ],
   imports: [
     BrowserModule,

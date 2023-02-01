@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book.model';
-import { BooksService } from 'src/app/services/books.service';
+import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-add-books',
@@ -8,7 +8,7 @@ import { BooksService } from 'src/app/services/books.service';
   styleUrls: ['./add-books.component.css']
 })
 export class AddBooksComponent implements OnInit {
-  Books : Book = {
+  Book : Book = {
     title: '',
     description: '',
     author:'',
@@ -17,21 +17,21 @@ export class AddBooksComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private booksService: BooksService) { }
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
   }
 
   saveBook(): void {
     const data = {
-      title: this.Books.title,
-      description: this.Books.description,
-      author: this.Books.author,
-      year: this.Books.year,
-      publisher:this.Books.publisher
+      title: this.Book.title,
+      description: this.Book.description,
+      author: this.Book.author,
+      year: this.Book.year,
+      publisher:this.Book.publisher
     };
 
-    this.booksService.create(data)
+    this.bookService.create(data)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -43,7 +43,7 @@ export class AddBooksComponent implements OnInit {
 
   newBook(): void {
     this.submitted = false;
-    this.Books = {
+    this.Book = {
       title: '',
       description: '',
       author:'',

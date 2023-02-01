@@ -11,7 +11,7 @@ db.user = require("./user.model");
 db.role = require("./role.model");
 
 db.url = dbConfig.url;
-db.Books = require("./books.model")(mongoose);
+db.books = require("./book.model")(mongoose);
 
 db.ROLES = ["user", "admin", "moderator"];
 

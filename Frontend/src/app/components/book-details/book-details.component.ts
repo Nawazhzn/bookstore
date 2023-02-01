@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book.model';
-import { BooksService } from 'src/app/services/books.service';
+import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -25,7 +25,7 @@ export class BookDetailsComponent implements OnInit{
 message ='';
 
 constructor(
-  private booksService: BooksService,
+  private bookService: BookService,
   private route: ActivatedRoute,
   private router: Router) { }
 
@@ -37,7 +37,7 @@ ngOnInit(): void {
 }
 
 getBook(id: string): void {
-  this.booksService.get(id)
+  this.bookService.get(id)
     .subscribe({
       next: (data) => {
         this.currentBook = data;
@@ -58,7 +58,7 @@ updatePublished(status: boolean): void {
 
   this.message = '';
 
-  this.booksService.update(this.currentBook.id, data)
+  this.bookService.update(this.currentBook.id, data)
     .subscribe({
       next: (res) => {
         console.log(res);
@@ -72,7 +72,7 @@ updatePublished(status: boolean): void {
 updateBook(): void {
   this.message = '';
 
-  this.booksService.update(this.currentBook.id, this.currentBook)
+  this.bookService.update(this.currentBook.id, this.currentBook)
     .subscribe({
       next: (res) => {
         console.log(res);
@@ -84,7 +84,7 @@ updateBook(): void {
 
 
 deleteBook(): void {
-  this.booksService.delete(this.currentBook.id)
+  this.bookService.delete(this.currentBook.id)
     .subscribe({
       next: (res) => {
         console.log(res);

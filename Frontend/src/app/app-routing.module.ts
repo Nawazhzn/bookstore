@@ -12,6 +12,7 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { AddBooksComponent } from './components/add-books/add-books.component';
+// import { BookhomeComponent } from './components/bookhome/bookhome.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,10 +24,13 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  { path: '', redirectTo: 'books', pathMatch: 'full' },
+  // { path: '', redirectTo: 'books', pathMatch: 'full' },
   { path: 'books', component: BookListComponent },
   { path: 'books/:id', component: BookDetailsComponent },
-  { path: 'add', component: AddBooksComponent }
+  { path: 'add', component: AddBooksComponent },
+  // { path: 'bookhome', component: BookhomeComponent }
+
+
 
 
 

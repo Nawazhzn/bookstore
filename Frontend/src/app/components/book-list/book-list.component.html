@@ -1,32 +1,19 @@
 <div class="list row">
-  <div class="col-md-8">
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by title"
-        [(ngModel)]="title"
-      />
+  <div class="col-md-8 ">
+    <div class="input-group mb-3 ">
+      <input type="text" class="form-control " placeholder="Search by title" [(ngModel)]="title" />
       <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchTitle()"
-        >
+        <button class="btn btn-outline-secondary" type="button" (keydown.enter)="searchTitle()">
           Search
         </button>
       </div>
     </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6 cussearch">
     <h4>Book List</h4>
     <ul class="list-group">
-      <li
-        class="list-group-item"
-        *ngFor="let Book of books; let i = index"
-        [class.active]="i == currentIndex"
-        (click)="setActiveBook(Book, i)"
-      >
+      <li class="list-group-item" *ngFor="let Book of books; let i  = index" [class.active]="i == currentIndex "
+        (click)="setActiveBook(Book, i)">
         {{ Book.title }}
       </li>
     </ul>
@@ -41,6 +28,6 @@
 </div>
 
 <div style="height: 500px;">
-<p>j</p>
+  <p></p>
 
 </div>

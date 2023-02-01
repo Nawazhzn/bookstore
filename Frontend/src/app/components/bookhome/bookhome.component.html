@@ -1,0 +1,28 @@
+<div class="list row searchbar">
+  <div class="col-md-12 ">
+    <div class="input-group mb-3 ">
+      <input type="text" class="form-control " placeholder="Search by title" [(ngModel)]="title" />
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" (click)="searchTitle()">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg">
+          <div class="card-deck" >
+            <div class="card" *ngFor="let Book of books; let i = index" [class.active]="i == currentIndex">
+              <img class="card-img-top" src="https://i.ibb.co/84WhS3K/book-cover-To-Kill-a-Mockingbird-many-1961.webp" height="500em" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{ Book.title }}</h5>
+                <p class="card-text">To Kill a Mockingbird is both a young girl's coming-of-age story and a darker drama about the roots and consequences of racism and prejudice, probing how good and evil can coexist within a single community or individual.</p>
+                <p class="card-text"><small class="text-muted">By Harper Lee in (1960)</small></p>
+              </div>
+        </div>
+      </div>
+    </div>

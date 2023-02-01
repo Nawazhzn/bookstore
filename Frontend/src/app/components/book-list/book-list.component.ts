@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book.model';
-import { BooksService } from 'src/app/services/books.service';
+import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-book-list',
@@ -14,7 +14,7 @@ currentBook:Book= {};
 currentIndex = -1;
 title = '';
 
-constructor(private booksService: BooksService) { }
+constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
     this.retrieveBooks();
@@ -22,7 +22,7 @@ constructor(private booksService: BooksService) { }
   }
 
   retrieveBooks(): void {
-    this.booksService.getAll()
+    this.bookService.getAll()
       .subscribe({
         next: (data) => {
           this.books = data;
@@ -44,7 +44,7 @@ constructor(private booksService: BooksService) { }
   }
 
   removeAllBooks(): void {
-    this.booksService.deleteAll()
+    this.bookService.deleteAll()
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -58,7 +58,7 @@ constructor(private booksService: BooksService) { }
     this.currentBook = {};
     this.currentIndex = -1;
 
-    this.booksService.findByTitle(this.title)
+    this.bookService.findByTitle(this.title)
       .subscribe({
         next: (data) => {
           this.books = data;

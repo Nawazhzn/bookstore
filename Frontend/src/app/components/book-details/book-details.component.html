@@ -9,14 +9,21 @@
       {{ currentBook.description }}
     </div>
     <div>
-      <label><strong>Status:</strong></label>
-      {{ currentBook.publisher ? "Publisher" : "Pending" }}
+      <label><strong>Author: </strong></label>
+      {{ currentBook.author }}
     </div>
 
-    <a
-      class="badge badge-warning"
-      routerLink="/books/{{ currentBook.id }}"
-    >
+    <div>
+      <label><strong>Year:</strong></label>
+      {{ currentBook.publisher}}
+    </div>
+
+    <div>
+      <label><strong>Status:</strong></label>
+      {{ currentBook.publisher ? "Published" : "Pending" }}
+    </div>
+
+    <a class="btn btn-warning" routerLink="/books/{{ currentBook.id }}">
       Edit
     </a>
   </div>
@@ -33,55 +40,41 @@
     <form>
       <div class="form-group">
         <label for="title">Title</label>
-        <input
-          type="text"
-          class="form-control"
-          id="title"
-          [(ngModel)]="currentBook.title"
-          name="title"
-        />
+        <input type="text" class="form-control" id="title" [(ngModel)]="currentBook.title" name="title" />
       </div>
+
       <div class="form-group">
         <label for="description">Description</label>
-        <input
-          type="text"
-          class="form-control"
-          id="description"
-          [(ngModel)]="currentBook.description"
-          name="description"
-        />
+        <input type="text" class="form-control" id="description" [(ngModel)]="currentBook.description"
+          name="description" />
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" [(ngModel)]="currentBook.author" name="author" />
+      </div>
+
+      <div class="form-group">
+        <label for="year">Year</label>
+        <input type="text" class="form-control" id="year" [(ngModel)]="currentBook.publisher" name="publisher" />
       </div>
 
       <div class="form-group">
         <label><strong>Status:</strong></label>
-        {{ currentBook.publisher ? "Publisher" : "Pending" }}
+        {{ currentBook.publisher ? "Published" : "Pending" }}
       </div>
     </form>
 
-    <button
-      class="badge badge-primary mr-2"
-      *ngIf="currentBook.publisher"
-      (click)="updatePublished(false)"
-    >
+    <button class="btn btn-primary mr-2" *ngIf="currentBook.publisher" (click)="updatePublished(false)">
       UnPublish
     </button>
-    <button
-      *ngIf="!currentBook.publisher"
-      class="badge badge-primary mr-2"
-      (click)="updatePublished(true)"
-    >
+    <button *ngIf="!currentBook.publisher" class="btn btn-primary mr-2" (click)="updatePublished(true)">
       Publish
     </button>
 
-    <button class="badge badge-danger mr-2" (click)="deleteBook()">
-      Delete
-    </button>
+    <button class="btn btn-danger mr-2" (click)="deleteBook()">Delete</button>
 
-    <button
-      type="submit"
-      class="badge badge-success mb-2"
-      (click)="updatePublished(false)"
-    >
+    <button type="submit" class="btn btn-success mr-2" (click)="updatePublished(true)">
       Update
     </button>
     <p>{{ message }}</p>
@@ -92,3 +85,7 @@
     <p>Cannot access this Book...</p>
   </div>
 </ng-template>
+
+<div style="height: 250px">
+  <p></p>
+</div>

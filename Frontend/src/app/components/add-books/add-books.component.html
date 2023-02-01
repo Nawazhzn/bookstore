@@ -1,4 +1,3 @@
-
 <div>
 
   <div class="submit-form">
@@ -6,65 +5,34 @@
     <div *ngIf="!submitted">
       <div class="form-group">
         <label for="title">Title</label>
-        <input
-          type="text"
-          class="form-control"
-          id="title"
-          required
-          [(ngModel)]="Books.title"
-          name="title"
-        />
+        <input type="text" class="form-control" id="title" required [(ngModel)]="Book.title" name="title" />
       </div>
 
       <div class="form-group">
         <label for="description">Description</label>
-        <input
-          class="form-control"
-          id="description"
-          required
-          [(ngModel)]="Books.description"
-          name="description"
-        />
+        <input class="form-control" id="description" required [(ngModel)]="Book.description" name="description" />
       </div>
 
       <div class="form-group">
         <label for="description">Author</label>
-        <input
-          class="form-control"
-          id="description"
-          required
-          [(ngModel)]="Books.author"
-          name="description"
-        />
+        <input class="form-control" id="description" required [(ngModel)]="Book.author" name="description" />
       </div>
 
       <div class="form-group">
         <label for="description">Year</label>
-        <input
-          class="form-control"
-          id="description"
-          required
-          [(ngModel)]="Books.year"
-          name="description"
-        />
+        <input class="form-control" id="description" required [(ngModel)]="Book.year" name="description" />
       </div>
 
       <div class="form-group">
         <label for="description">Publisher</label>
-        <input
-          class="form-control"
-          id="description"
-          required
-          [(ngModel)]="Books.publisher"
-          name="description"
-        />
+        <input class="form-control" id="description" required [(ngModel)]="Book.publisher" name="description" />
       </div>
 
       <button (click)="saveBook()" class="btn btn-success">Submit</button>
     </div>
 
     <div *ngIf="submitted">
-      <h4>Book was added successfully!</h4>
+      <h4>New Book was added successfully!</h4>
       <button class="btn btn-success" (click)="newBook()">Add</button>
     </div>
   </div>
@@ -73,4 +41,4 @@
 <div style="height: 100px;">
   <p>j</p>
 
-  </div>
+</div>
