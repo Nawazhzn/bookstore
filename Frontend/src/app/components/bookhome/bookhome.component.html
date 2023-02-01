@@ -17,11 +17,11 @@
         <div class="col-lg">
           <div class="card-deck" >
             <div class="card" *ngFor="let Book of books; let i = index" [class.active]="i == currentIndex">
-              <img class="card-img-top" src="https://i.ibb.co/84WhS3K/book-cover-To-Kill-a-Mockingbird-many-1961.webp" height="500em" alt="Card image cap">
+              <img class="card-img-top" src="https://static.vecteezy.com/system/resources/previews/002/219/582/original/illustration-of-book-icon-free-vector.jpg" height="250em" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ Book.title }}</h5>
                 <p class="card-text">{{Book.description}}</p>
-                <p class="card-text"><small class="text-muted">By {{Book.author}} in ({{Book.publisher}})</small></p>
+                <p class="card-text"><small class="text-muted">By {{Book.author}} in {{Book.publisher}}</small></p>
               </div>
         </div>
       </div>
